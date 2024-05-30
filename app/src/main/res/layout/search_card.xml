@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_package_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:backgroundTintMode="add"
+    app:cardCornerRadius="20dp"
+    app:contentPadding="20dp"
+    tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+                <com.google.android.material.tabs.TabLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    >
+
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="One way"
+
+                            />
+
+                        <com.google.android.material.tabs.TabItem
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Round trip"
+                            />
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fromTextInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="From"
+                    app:expandedHintEnabled="false"
+                    app:startIconContentDescription="Vuelo2"
+                    app:startIconDrawable="@drawable/airplane_takeoff"
+                    android:layout_marginBottom="18dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/toTextInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="To"
+                    app:expandedHintEnabled="false"
+                    app:startIconContentDescription="Vuelo2"
+                    app:startIconDrawable="@drawable/airplane_landing"
+                    android:layout_marginBottom="18dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/departureTextInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Departure Date"
+                    app:expandedHintEnabled="false"
+                    app:startIconContentDescription="Vuelo2"
+                    app:startIconDrawable="@drawable/calender"
+                    android:layout_marginBottom="18dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="18dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/passengersTextInputLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Passengers"
+                            app:expandedHintEnabled="false"
+                            app:startIconContentDescription="Vuelo2"
+                            app:startIconDrawable="@drawable/group"
+                            tools:ignore="MissingConstraints"
+                            android:layout_marginEnd="13dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/classTextInputLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Class"
+                            app:expandedHintEnabled="false"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@id/passengersTextInputLayout"
+                            app:startIconContentDescription="Vuelo2"
+                            app:startIconDrawable="@drawable/thumbup"
+                            tools:ignore="MissingConstraints">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/searchButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Search"
+                    app:backgroundTint="#F99A0E"
+                     />
+
+
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>
