@@ -3,50 +3,50 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_package_item"
+    android:id="@+id/cardSearchCardMain"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:backgroundTintMode="add"
     app:cardCornerRadius="20dp"
-    app:contentPadding="20dp"
-    tools:context=".MainActivity">
+    app:contentPadding="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/linearLayoutSearchCard">
 
 
                 <com.google.android.material.tabs.TabLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-
+                    android:id="@+id/tabLayouttSearchCard"
                     >
 
 
                         <com.google.android.material.tabs.TabItem
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="One way"
-
+                            android:text="@string/search_card_tab_item_1"
+                            android:id="@+id/tabItemSearchCard1"
                             />
 
                         <com.google.android.material.tabs.TabItem
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Round trip"
+                            android:text="@string/search_card_tab_item_2"
+                            android:id="@+id/tabItemSearchCard2"
                             />
 
                 </com.google.android.material.tabs.TabLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/fromTextInputLayout"
+                    android:id="@+id/txtInputSearchCardFrom"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="From"
+                    android:hint="@string/search_card_txt_input_1"
                     app:expandedHintEnabled="false"
                     app:startIconContentDescription="Vuelo2"
                     app:startIconDrawable="@drawable/airplane_takeoff"
@@ -55,17 +55,18 @@
                         <com.google.android.material.textfield.TextInputEditText
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtInputEditSearchCardFrom"/>
 
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/toTextInputLayout"
+                    android:id="@+id/txtInputSearchCardTo"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="To"
+                    android:hint="@string/search_card_txt_input_2"
                     app:expandedHintEnabled="false"
                     app:startIconContentDescription="Vuelo2"
                     app:startIconDrawable="@drawable/airplane_landing"
@@ -74,17 +75,18 @@
                         <com.google.android.material.textfield.TextInputEditText
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtInputEditSearchCardTo"/>
 
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/departureTextInputLayout"
+                    android:id="@+id/txtInputSearchCardDate"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Departure Date"
+                    android:hint="@string/search_card_txt_input_3"
                     app:expandedHintEnabled="false"
                     app:startIconContentDescription="Vuelo2"
                     app:startIconDrawable="@drawable/calender"
@@ -93,7 +95,8 @@
                         <com.google.android.material.textfield.TextInputEditText
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtInputEditSearchCardDate"/>
 
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -105,11 +108,11 @@
                     android:layout_marginBottom="18dp">
 
                         <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/passengersTextInputLayout"
+                            android:id="@+id/txtInputSearchCardPassenger"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
-                            android:hint="Passengers"
+                            android:hint="@string/search_card_txt_input_4"
                             app:expandedHintEnabled="false"
                             app:startIconContentDescription="Vuelo2"
                             app:startIconDrawable="@drawable/group"
@@ -119,21 +122,21 @@
                                 <com.google.android.material.textfield.TextInputEditText
                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txtInputEditSearchCardPassenger"/>
 
 
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/classTextInputLayout"
+                            android:id="@+id/txtInputSearchCardClass"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
-                            android:hint="Class"
+                            android:hint="@string/search_card_txt_input_5"
                             app:expandedHintEnabled="false"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="1.0"
-                            app:layout_constraintStart_toEndOf="@id/passengersTextInputLayout"
                             app:startIconContentDescription="Vuelo2"
                             app:startIconDrawable="@drawable/thumbup"
                             tools:ignore="MissingConstraints">
@@ -141,7 +144,8 @@
                                 <com.google.android.material.textfield.TextInputEditText
                                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txtInputEditSearchCardClass"/>
 
 
                         </com.google.android.material.textfield.TextInputLayout>
@@ -149,10 +153,10 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <Button
-                    android:id="@+id/searchButton"
+                    android:id="@+id/btnSearchCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Search"
+                    android:text="@string/search_card_txt_input_btn"
                     app:backgroundTint="#F99A0E"
                      />
 

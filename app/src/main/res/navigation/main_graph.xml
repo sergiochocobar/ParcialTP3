@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/intro2Fragment">
+
+    <fragment
+        android:id="@+id/searchFlightFragment"
+        android:name="com.example.parcialtp3.fragments.SearchFlightFragment"
+        android:label="fragment_search_flight"
+        tools:layout="@layout/fragment_search_flight" />
+    <fragment
+        android:id="@+id/intro2Fragment"
+        android:name="com.example.parcialtp3.fragments.Intro2Fragment"
+        android:label="fragment_intro2"
+        tools:layout="@layout/fragment_intro2" >
+        <action
+            android:id="@+id/action_intro2Fragment_to_searchFlightFragment"
+            app:destination="@id/searchFlightFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/offerItem"
+        android:name="com.example.parcialtp3.fragments.OfferItem"
+        android:label="fragment_offer_item"
+        tools:layout="@layout/fragment_offer_item" >
+        <argument
+            android:name="offer"
+            app:argType="com.example.parcialtp3.creditsCardsOffers.CreditsCardsOffers" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.parcialtp3.fragments.ListFragment"
+        android:label="ListFragment" >
+        <action
+            android:id="@+id/action_listFragment_to_offerItem"
+            app:destination="@id/offerItem" />
+    </fragment>
+</navigation>
