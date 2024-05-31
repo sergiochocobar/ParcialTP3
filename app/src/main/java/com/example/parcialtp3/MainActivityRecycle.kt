@@ -9,10 +9,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3.creditsCardsOffers.CreditCardsOffersProvider
 import com.example.parcialtp3.creditsCardsOffers.adapter.CreditCardsOffersAdapter
+import com.example.parcialtp3.databinding.ActivityMainBinding
 
+class MainActivityRecycle : AppCompatActivity() {
 
-class MainActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,4 +30,10 @@ class MainActivity : AppCompatActivity() {
         //initRecyclerView()
     }
 
+    /*fun initRecyclerView(){
+
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerOffers)
+        recyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        recyclerView.adapter = CreditCardsOffersAdapter(CreditCardsOffersProvider.creditCardsOffersList)
+    }*/
 }
