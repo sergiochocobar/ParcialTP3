@@ -1,6 +1,7 @@
 package com.example.parcialtp3
 
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -28,17 +29,21 @@ class MainActivity : AppCompatActivity() {
         navigationView = findViewById(R.id.nav_view)
         navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
 
-        setupDrawerLayout()
-
-//        navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
+        //BottomNavigation
         bottomNavView = findViewById(R.id.bottomNavView)
         NavigationUI.setupWithNavController(bottomNavView, navHostFragment.navController)
+
+        setupDrawerLayout()
     }
 
     private fun setupDrawerLayout() {
         val navController = navHostFragment.navController
         navigationView.setupWithNavController(navController)
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+
+        navController.addOnDestinationChangedListener { _, _, _ ->
+            supportActionBar?.setHomeAsUpIndicator(R.drawable.hamburger_icon)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
