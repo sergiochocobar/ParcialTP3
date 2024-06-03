@@ -45,6 +45,8 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, _, _ ->
             supportActionBar?.setHomeAsUpIndicator(R.drawable.hamburger_icon)
         }
+
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

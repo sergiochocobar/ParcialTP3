@@ -6,10 +6,9 @@
     tools:context=".fragments.Offers">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerBigOffers"
+        android:id="@+id/recyclerFlightsResults"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
 
 </FrameLayout>
-
