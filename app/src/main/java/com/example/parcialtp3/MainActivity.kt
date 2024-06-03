@@ -15,25 +15,26 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
-
     private lateinit var bottomNavView : BottomNavigationView
     private lateinit var navHostFragment : NavHostFragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Toolbar
+
+
+        //Navigation Drawer
         drawerLayout = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)
         navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
+        setupDrawerLayout()
 
         //BottomNavigation
         bottomNavView = findViewById(R.id.bottomNavView)
         NavigationUI.setupWithNavController(bottomNavView, navHostFragment.navController)
-
-        setupDrawerLayout()
     }
 
     private fun setupDrawerLayout() {
@@ -52,7 +53,6 @@ class MainActivity : AppCompatActivity() {
         } else {
             drawerLayout.openDrawer(GravityCompat.START)
         }
-
         return false
     }
 }
