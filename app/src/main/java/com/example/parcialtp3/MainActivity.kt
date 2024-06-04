@@ -13,12 +13,15 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.example.parcialtp3.databinding.ActivityMainBinding
+import com.example.parcialtp3.Interface.splash.SplashFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
     private lateinit var bottomNavView : BottomNavigationView
     private lateinit var navHostFragment : NavHostFragment
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,6 +38,14 @@ class MainActivity : AppCompatActivity() {
         //BottomNavigation
         bottomNavView = findViewById(R.id.bottomNavView)
         NavigationUI.setupWithNavController(bottomNavView, navHostFragment.navController)
+
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host, SplashFragment())
+                .commit()
+        }
+
     }
 
     private fun setupDrawerLayout() {
