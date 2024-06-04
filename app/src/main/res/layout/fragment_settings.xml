@@ -3,49 +3,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Interface.offers.OffersFragment">
+    android:background="@color/mainBg">
 
     <FrameLayout
         android:id="@+id/containerSettings"
         android:background="@color/white"
         android:layout_marginTop="20dp"
-        android:layout_width="350dp"
-        android:layout_height="142dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true">
 
         <LinearLayout
-            android:layout_margin="5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
                 android:text="Generales"
-                android:textSize="15dp"
                 android:textColor="@color/blue"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"/>
+                android:textSize="14dp" />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="56dp"
                 android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:paddingHorizontal="16dp">
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
                     android:id="@+id/botonModoOscuro"
-                    android:layout_width="340dp"
-                    android:layout_height="102dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="Modo Oscuro"
-                    android:textSize="17dp"
+                    android:fontFamily="@font/quicksand"
+                    android:textSize="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
             </LinearLayout>
         </LinearLayout>
-
     </FrameLayout>
-
 </RelativeLayout>
