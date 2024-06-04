@@ -32,5 +32,13 @@
     <fragment
         android:id="@+id/flightResultsFragment"
         android:name="com.example.parcialtp3.fragments.FlightResultsFragment"
-        android:label="FlightResultsFragment" />
+        android:label="FlightResultsFragment" >
+        <action
+            android:id="@+id/action_flightResultsFragment_to_bestDestinationFragment"
+            app:destination="@id/bestDestinationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bestDestinationFragment"
+        android:name="com.example.parcialtp3.fragments.BestDestinationFragment"
+        android:label="BestDestinationFragment" />
 </navigation>

@@ -225,14 +225,14 @@
                             android:layout_height="100dp"
                             android:layout_margin="10dp"
                             android:id="@+id/imgViewBestDestinationPhoto2"
-                            android:src="@drawable/boracay_img_uno"/>
+                            android:src="@drawable/boracay_img_dos"/>
 
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_margin="10dp"
                             android:id="@+id/imgViewBestDestinationPhoto3"
-                            android:src="@drawable/boracay_img_uno"/>
+                            android:src="@drawable/boracay_img_tres"/>
 
                     </LinearLayout>
 

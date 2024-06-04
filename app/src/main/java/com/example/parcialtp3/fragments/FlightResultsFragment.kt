@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.parcialtp3.R
 import com.example.parcialtp3.adapters.FlightResultsAdapter
 import com.example.parcialtp3.databinding.FragmentFlightResultsBinding
 import com.example.parcialtp3.entities.FlightResults
@@ -40,7 +42,10 @@ class FlightResultsFragment : Fragment() {
         flightAdapter = FlightResultsAdapter(emptyList())
         recyclerView.adapter = flightAdapter
 
+
         fetchFlights()
+
+
 
         return binding.root
     }
