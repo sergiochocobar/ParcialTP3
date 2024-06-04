@@ -8,16 +8,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcialtp3.adapters.BigOffersAdapter
+import com.example.parcialtp3.adapters.FlightResultsAdapter
 import com.example.parcialtp3.adapters.LittleOffersAdapter
+import com.example.parcialtp3.databinding.FragmentFlightResultsBinding
 import com.example.parcialtp3.databinding.FragmentOffersBinding
 import com.example.parcialtp3.databinding.FragmentSearchBinding
 import com.example.parcialtp3.providers.CreditCardsOffersProvider
+import com.example.parcialtp3.providers.FlightResultsProvider
 
-class Offers : Fragment() {
+class FlightResultsFragment : Fragment() {
 
-    private lateinit var offersRecycleView: RecyclerView
-    private lateinit var bigOffersAdapter: BigOffersAdapter
-    private var _binding: FragmentOffersBinding? =null
+    private lateinit var flightResultsRecycleView: RecyclerView
+    private lateinit var flightResultsAdapter: FlightResultsAdapter
+    private var _binding: FragmentFlightResultsBinding? =null
     private val binding get() = _binding!!
 
 
@@ -32,13 +35,13 @@ class Offers : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding =  FragmentOffersBinding.inflate(inflater,container,false)
+        _binding =  FragmentFlightResultsBinding.inflate(inflater,container,false)
 
-        offersRecycleView = _binding!!.recyclerBigOffers
-        offersRecycleView.layoutManager = LinearLayoutManager(context)
-        bigOffersAdapter = BigOffersAdapter(CreditCardsOffersProvider.creditCardsOffersList)
+        flightResultsRecycleView = _binding!!.recyclerFlightsResults
+        flightResultsRecycleView.layoutManager = LinearLayoutManager(context)
+        flightResultsAdapter = FlightResultsAdapter(FlightResultsProvider.flightResultsList)
 
-        offersRecycleView.adapter = bigOffersAdapter
+        flightResultsRecycleView.adapter = flightResultsAdapter
 
         return binding.root
     }
