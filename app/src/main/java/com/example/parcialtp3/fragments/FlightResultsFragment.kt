@@ -7,48 +7,78 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.parcialtp3.adapters.BigOffersAdapter
 import com.example.parcialtp3.adapters.FlightResultsAdapter
-import com.example.parcialtp3.adapters.LittleOffersAdapter
 import com.example.parcialtp3.databinding.FragmentFlightResultsBinding
-import com.example.parcialtp3.databinding.FragmentOffersBinding
-import com.example.parcialtp3.databinding.FragmentSearchBinding
-import com.example.parcialtp3.providers.CreditCardsOffersProvider
-import com.example.parcialtp3.providers.FlightResultsProvider
+import com.example.parcialtp3.entities.FlightResults
+import com.example.parcialtp3.api.RetrofitClient
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class FlightResultsFragment : Fragment() {
 
-    private lateinit var flightResultsRecycleView: RecyclerView
-    private lateinit var flightResultsAdapter: FlightResultsAdapter
-    private var _binding: FragmentFlightResultsBinding? =null
+    private lateinit var flightAdapter: FlightResultsAdapter
+    private lateinit var recyclerView: RecyclerView
+    private var _binding: FragmentFlightResultsBinding? = null
     private val binding get() = _binding!!
 
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    companion object {
+        fun newInstance() = FlightResultsFragment()
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        _binding =  FragmentFlightResultsBinding.inflate(inflater,container,false)
+    ): View {
+        _binding = FragmentFlightResultsBinding.inflate(inflater, container, false)
+        recyclerView = binding.recyclerFlightsResults
+        recyclerView.layoutManager = LinearLayoutManager(this.context)
+        flightAdapter = FlightResultsAdapter(emptyList())
+        recyclerView.adapter = flightAdapter
 
-        flightResultsRecycleView = _binding!!.recyclerFlightsResults
-        flightResultsRecycleView.layoutManager = LinearLayoutManager(context)
-        flightResultsAdapter = FlightResultsAdapter(FlightResultsProvider.flightResultsList)
-
-        flightResultsRecycleView.adapter = flightResultsAdapter
+        fetchFlights()
 
         return binding.root
     }
 
-    companion object {
-        fun newInstance() = Search()
+    private fun  fetchFlights() {
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val response = RetrofitClient.apiService.getFlights()
+                val flights = response.best_flights.map { bestFlight ->
+                    bestFlight.flights.firstOrNull()?.let { flight ->
+                        FlightResults(
+                            airline = flight.airline,
+                            duration = flight.duration,
+                            departure_airport = flight.departure_airport,
+                            arrival_airport = flight.arrival_airport,
+                            travel_class = flight.travel_class,
+                            airline_logo = flight.airline_logo,
+                            airplane = flight.airplane,
+                            extensions = flight.extensions,
+                            flight_number = flight.flight_number,
+                            legroom = flight.legroom,
+                            often_delayed_by_over_30_min = flight.often_delayed_by_over_30_min,
+                            overnight = flight.overnight,
+                            price = bestFlight.price
+                        )
+                    }
+                }.filterNotNull()
+
+                withContext(Dispatchers.Main) {
+                    flightAdapter.updateFlights(flights)
+                }
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

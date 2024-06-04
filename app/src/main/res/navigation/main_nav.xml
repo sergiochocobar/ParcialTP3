@@ -24,5 +24,13 @@
         android:id="@+id/search"
         android:name="com.example.parcialtp3.fragments.Search"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_search_to_flightResultsFragment"
+            app:destination="@id/flightResultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/flightResultsFragment"
+        android:name="com.example.parcialtp3.fragments.FlightResultsFragment"
+        android:label="FlightResultsFragment" />
 </navigation>
