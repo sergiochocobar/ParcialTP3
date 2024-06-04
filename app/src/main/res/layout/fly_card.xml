@@ -49,8 +49,8 @@
                         >
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
 
                         android:layout_margin="15dp"
                         android:id="@+id/imgViewLogoCompanyFlyCard"
@@ -121,14 +121,16 @@
                         android:layout_height="wrap_content"
                         android:textColor="#1262AE"
                         android:textSize="25dp"
+                        android:text="EZE"
                         android:textStyle="bold"
                         android:id="@+id/txtViewFromAirportFlyCard"
 
                         />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
+                        android:text="Ezeiza aeropuetoasdasdasdasdas"
                         android:id="@+id/txtViewFromAirportNameFlyCard"
                         />
 
@@ -172,9 +174,10 @@
                         />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/txtViewToAirportNameFlyCard"/>
+                        android:id="@+id/txtViewToAirportNameFlyCard"
+                        android:gravity="end"/>
 
                 </LinearLayout>
 

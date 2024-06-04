@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.parcialtp3.R
 import com.example.parcialtp3.adapters.LittleOffersAdapter
 import com.example.parcialtp3.databinding.FragmentSearchBinding
 import com.example.parcialtp3.providers.CreditCardsOffersProvider
@@ -38,6 +41,11 @@ class Search : Fragment() {
         littleOffersAdapter = LittleOffersAdapter(CreditCardsOffersProvider.creditCardsOffersList)
 
         offersRecycleView.adapter = littleOffersAdapter
+
+        val btnNavigate = _binding!!.btnSearchCard
+
+        btnNavigate.setOnClickListener{
+            findNavController().navigate(SearchDirections.actionSearchToFlightResultsFragment())}
 
         return binding.root
     }
