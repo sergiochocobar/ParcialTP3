@@ -1,5 +1,6 @@
 # Parcial-TP3
-#Integrantes
-#sergiochocobar - Sergio Chocobar
-#javierPyke - Javier Pyke
-#GonzaCarballo - Gonzalo Carballo
+
+## Integrantes - Grupo 6 YATAY
+- sergiochocobar - Sergio Chocobar
+- javierPyke - Javier Pyke
+- GonzaCarballo - Gonzalo Carballo
