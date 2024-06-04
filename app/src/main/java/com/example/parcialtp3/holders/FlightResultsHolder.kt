@@ -8,8 +8,14 @@ import com.example.parcialtp3.R
 
 class FlightResultsHolder (view: View) : RecyclerView.ViewHolder(view){
 
-        val bigTitle: TextView = itemView.findViewById(R.id.txtDiscountCardBigTitle)
-        val description: TextView = itemView.findViewById(R.id.txtDiscountCardBigDescription)
-        val img: ImageView = itemView.findViewById(R.id.imgViewDiscountCardBigCreditCard)
+        val airline: TextView = itemView.findViewById(R.id.txtViewCompanyNameFlyCard)
+        val duration: TextView = itemView.findViewById(R.id.txtViewDurationFlyCard)
+        val departureAirport: TextView = itemView.findViewById(R.id.txtViewFromAirportNameFlyCard)
+        val departureAirportId: TextView = itemView.findViewById(R.id.txtViewFromAirportFlyCard)
+        val arrivalAirport: TextView = itemView.findViewById(R.id.txtViewToAirportNameFlyCard)
+        val arrivalAirportId: TextView = itemView.findViewById(R.id.txtViewToAirportFlyCard)
+        val travelClass: TextView = itemView.findViewById(R.id.txtViewClasstFlyCard)
+        val price: TextView = itemView.findViewById(R.id.txtViewPriceFlyCard)
+        val airlineLogo: ImageView = itemView.findViewById(R.id.imgViewLogoCompanyFlyCard)
 
 }
