@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Interface.offers.OffersFragment">
+
+    <FrameLayout
+        android:id="@+id/container1"
+        android:layout_width="340dp"
+        android:layout_height="200dp"
+        android:background="@color/white"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/corazonSinRelleno"
+                android:layout_width="36dp"
+                android:layout_height="31dp"
+                android:background="@color/white"
+                android:layout_gravity="end"
+                android:src="@drawable/corazon_sin_relleno" />
+
+            <TextView
+                android:text="LIMITED OFFER!"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:background="#32D4AD"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:text="Get 20% disount with your Master credit cards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="327dp"
+                android:layout_height="86dp"
+                android:src="@drawable/solo_tarjeta_celeste" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/container2"
+        android:background="@color/white"
+        android:layout_width="340dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/container1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:orientation="vertical" >
+
+            <ImageButton
+                android:id="@+id/corazonConRelleno"
+                android:layout_width="36dp"
+                android:layout_height="31dp"
+                android:background="@color/white"
+                android:layout_gravity="end"
+                android:src="@drawable/corazon_lleno" />
+
+            <TextView
+                android:text="LIMITED OFFER!"
+                android:textSize="13sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#32D4AD"
+                android:textStyle="bold"
+                android:padding="5dp"/>
+            <TextView
+                android:text="Get 20% disount with your Master credit cards"
+                android:textSize="19sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"/>
+            <ImageView
+                android:layout_width="327dp"
+                android:layout_height="86dp"
+                android:src="@drawable/solo_tarjeta_violeta" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
